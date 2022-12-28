@@ -1,4 +1,4 @@
-// main package comment 
+// main package comment
 package main
 
 import "fmt"
