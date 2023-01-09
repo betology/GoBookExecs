@@ -1,12 +1,12 @@
 package logging
 
-import(
+import (
 	"log"
 	"fmt"
 )
 
 type DefaultLogger struct {
-	minLevel Loglevel
+	minLevel LogLevel
 	loggers map[LogLevel]*log.Logger
 	triggerPanic bool
 }
@@ -30,27 +30,27 @@ func (l *DefaultLogger) Tracef(template string, vals ...interface{}) {
 }
 
 func (l *DefaultLogger) Debug(msg string) {
-	l.write(Trace, msg)
+	l.write(Debug, msg)
 }
 
 func (l *DefaultLogger) Debugf(template string, vals ...interface{}) {
-	l.write(Trace, fmt.Sprintf(template, vals...))
+	l.write(Debug, fmt.Sprintf(template, vals...))
 }
 
 func (l *DefaultLogger) Info(msg string) {
-	l.write(Trace, msg)
+	l.write(Information, msg)
 }
 
 func (l *DefaultLogger) Infof(template string, vals ...interface{}) {
-	l.write(Trace, fmt.Sprintf(template, vals...))
+	l.write(Information, fmt.Sprintf(template, vals...))
 }
 
 func (l *DefaultLogger) Warn(msg string) {
-	l.write(Trace, msg)
+	l.write(Warning, msg)
 }
 
 func (l *DefaultLogger) Warnf(template string, vals ...interface{}) {
-	l.write(Trace, fmt.Sprintf(template, vals...))
+	l.write(Warning, fmt.Sprintf(template, vals...))
 }
 
 func (l *DefaultLogger) Panic(msg string) {
@@ -60,11 +60,11 @@ func (l *DefaultLogger) Panic(msg string) {
 	}
 }
 
-func (l *DefaultLogger) Panicf(tamplate struc, vals ...interface{}) {
+func (l *DefaultLogger) Panicf(template string, vals ...interface{}) {
 	formattedMsg := fmt.Sprintf(template, vals...)
 	l.write(Fatal, formattedMsg)
-	if (l.tirggerPanic) {
-		panic(formttedMsg)
+	if (l.triggerPanic) {
+		panic(formattedMsg)
 	}
 }
 

@@ -24,7 +24,7 @@ type Logger interface {
 	Warn(string)
 	Warnf(string, ...interface{})
 
-	Panic(strin)
+	Panic(string)
 	Panicf(string, ...interface{})
 }
 

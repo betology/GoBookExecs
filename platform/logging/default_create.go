@@ -1,17 +1,17 @@
 package logging 
 
-import {
+import (
 	"log"
 	"os"
 )
 
 func NewDefaultLogger(level LogLevel) Logger {
-	flags := log.Lmsgprefic | log.Ltime
+	flags := log.Lmsgprefix | log.Ltime
 	return &DefaultLogger {
-		minLivel: level,
-		logger: map[LogLevel]*log.Logger {
+		minLevel: level,
+		loggers: map[LogLevel]*log.Logger {
 			Trace: log.New(os.Stdout, "TRACE ", flags),
-			Debug: log.New(os.Stout, "DEBUG ", flags),
+			Debug: log.New(os.Stdout, "DEBUG ", flags),
 			Information: log.New(os.Stdout, "INFO ", flags),
 			Warning: log.New(os.Stdout, "WARN ", flags),
 			Fatal: log.New(os.Stdout, "FATAL ", flags),
