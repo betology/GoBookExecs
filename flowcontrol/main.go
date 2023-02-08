@@ -9,7 +9,7 @@ func main() {
 		fmt.Println("Price is greater tha 500")
 	} else if (kayakPrice < 100) {
 		fmt.Println("Price is less than 100")
-	} else if (kayakPrice > 200 && kayakPrice < 300) {
-		fmt.Println("Price is between 200 and 300")
+	} else {
+		fmt.Println("Price now matched by earlier expressions")
 	}
 }
