@@ -16,4 +16,11 @@ func main() {
 
 	cZero := c3 - c3
 	fmt.Println("cZero:", cZero)
+	x := 12
+	k := 5
+	fmt.Println(x)
+	fmt.Printf("Type of x: %T\n", x)
+
+	div := x / k
+	fmt.Println("div", div)
 }
