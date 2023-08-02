@@ -6,10 +6,13 @@ func main() {
 	kayakPrice := 275.00
 
 	if kayakPrice > 500 {
-		fmt.Println("Price is greater tha 500")
+		scopedVar := 500
+		fmt.Println("Price is greater than", scopedVar)
 	} else if (kayakPrice < 100) {
-		fmt.Println("Price is less than 100")
+		scopedVar := "Price es less than 100"
+		fmt.Println(scopedVar)
 	} else {
-		fmt.Println("Price now matched by earlier expressions")
+		scopedVar := false
+		fmt.Println("Matched: ", scopedVar)
 	}
 }
